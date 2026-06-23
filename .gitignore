@@ -1,0 +1,14 @@
+# Personal / machine-specific Claude config (never commit)
+.claude/settings.local.json
+CLAUDE.local.md
+.claude/**/agent-memory-local/
+.claude/*-local/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+
+# Scratch / working artifacts
+scratchpad/
+*.tmp
