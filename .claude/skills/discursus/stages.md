@@ -5,7 +5,30 @@ resolve (accept/reject/defer) → apply fixes as diffs → append a decision + u
 Honor the mode's gate (see SKILL.md). Think and stress-test before offering options, and
 record longer option-exploration in `Thinking-space/scratch/` so your reasoning is
 inspectable. Inputs come from `Manuscript/` (the paper's sections) and `Literature/` (cited
-papers); all generated artifacts live under `Thinking-space/`.
+papers); all generated artifacts live under `Thinking-space/`. A filled walkthrough of every
+artifact is in `example-run.md`.
+
+---
+
+## Reviewer brief block (use for EVERY dispatch)
+Subagents inherit no conversation and may not share your working directory, so each dispatch
+must be self-contained. Fill this block and pass it verbatim to the agent:
+
+```
+- Working dir (absolute): <working_dir>
+- Unit under review (inline): <paste the full paragraph / outline text — do not rely on the
+  agent to locate it>
+- Central claim (inline): <paste the one-sentence claim>
+- Outline takeaway for this unit: <the one-line takeaway>
+- Read as needed (absolute paths): <working_dir>/Manuscript/, <working_dir>/Literature/,
+  and the Thinking-space artifacts the agent's definition names
+  (<working_dir>/Thinking-space/claim.md, /outline.md, /paragraphs/)
+- Your focus: <the one check this agent owns>
+```
+
+Agents resolve every file reference from these absolute paths. If a named input is absent, the
+agent returns `NEED: <it>` instead of guessing. The unit and claim are pasted **inline** so a
+reviewer never depends on reading them.
 
 ---
 
@@ -34,9 +57,9 @@ alone, tell the whole story (B2).
    (what changes, B19).
 2. For each paragraph, add a **"keep here / defer"** note so content has exactly one home
    (B5) — this seeds `placement-forward` later.
-3. Reviewers (parallel): `spine-alignment`, `logic-sort`, `placement-forward`, plus a
-   breadth check (B6) — read the takeaways alone; do they tell the story with no gaps or
-   zig-zags?
+3. Reviewers (parallel): `spine-alignment`, `logic-sort`, `placement-forward`. Then the
+   **orchestrator** runs the B6 breadth check itself — read the takeaway column alone: does
+   it tell the story to a non-specialist with no gaps or zig-zags?
 4. Stress-test a better ordering (B4). Present the outline + any re-sort options.
 
 **Gate:** the reverse-outline must pass B2 (story stands alone) + B4 (logical order) before
@@ -54,11 +77,11 @@ For each paragraph, in outline order:
 2. **Draft** (or, in human-in-the-loop, take the user's draft from `Manuscript/`).
 3. **Parallel review** — run all seven: `redundancy-backward`, `placement-forward`,
    `concision`, `logic-sort`, `claim-evidence`, `spine-alignment`, `sciwriting-adherence`.
-   Brief each with: the paragraph, the claim, the outline takeaway, and that inputs live in
-   `Manuscript/` and `Literature/`.
+   Dispatch each with the **Reviewer brief block** above.
 4. **Handshake.** Collect findings into `Thinking-space/log/handshake/p<NN>-round<n>.md`.
    Synthesize and de-duplicate. For each: ACCEPT (how) / REJECT (why) / DEFER (add the note
-   to `outline.md` and say where it now lives).
+   to `outline.md` and say where it now lives). If a reviewer errors or returns empty, note
+   it and re-dispatch once — a missing reviewer is never counted as a pass.
 5. **Fix** as diffs (never silent overwrite). If material changed, re-run the affected
    reviewers (new round) until clean.
 6. **Dream-Quality gate.** Run `dream-quality-gate` on the revised paragraph. If it returns

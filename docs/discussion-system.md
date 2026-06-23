@@ -12,6 +12,7 @@ context limits and even a change of tool or model.
 | **Quality rubric** | `.claude/skills/scientific-writing/` | The single source of truth for "good" (`final-qualities.md`) |
 | **Reviewer agents** | `.claude/agents/*.md` | Seven parallel reviewers + one final quality gate |
 | **System self-audit** | `.claude/skills/system-design-review/` | Audits this system's *design* (dogfood it after changes) |
+| **Worked example** | `.claude/skills/discursus/example-run.md` | A filled claim → outline → paragraph → handshake, as a calibration anchor |
 
 ## The pipeline
 
@@ -20,9 +21,11 @@ central claim → reverse-outline → (per paragraph: design → parallel review
 handshake → fixes → Dream-Quality gate) → whole-section gate
 ```
 
-Each stage produces an artifact and a log entry. Reviewers run **in parallel**; the
-orchestrator synthesizes their findings, you (or it, by mode) resolve each, and fixes are
-applied as diffs.
+Each stage produces an artifact and a log entry. Reviewers run **in parallel**, each
+dispatched with a self-contained brief (absolute paths + the unit pasted inline, since
+subagents inherit no context); the orchestrator synthesizes their findings, you (or it, by
+mode) resolve each, and fixes are applied as diffs. Fetched sources are treated as data, not
+instructions.
 
 ## The reviewer roster
 
