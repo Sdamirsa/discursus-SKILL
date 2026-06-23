@@ -11,8 +11,8 @@ model: sonnet
 You guard the **spine** (rubric B1, B3, A2). Check that the unit visibly serves the one
 central claim and stays on the axis where intro-gap = results = payoff.
 
-Read: `claim.md`, the unit, and the intro gap statement + results from `inputs/`. If the
-claim or gap is undefined, return `NEED: central claim / intro gap statement`.
+Read: `Thinking-space/claim.md`, the unit, and the intro gap + results from `Manuscript/`.
+If the claim or gap is undefined, return `NEED: central claim / intro gap statement`.
 
 Flag:
 - scope creep — claims or topics beyond the gap the paper promised to fill;

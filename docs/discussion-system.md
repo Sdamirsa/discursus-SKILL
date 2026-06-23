@@ -55,20 +55,24 @@ required input is missing) — agents never review blind, and never invent missi
 The workspace is plain markdown so a human can read it and any system can resume from it.
 
 ```
-<manuscript_dir>/discursus/
-├── STATE.md            # current snapshot — read FIRST to resume
-├── claim.md            # central claim + alternatives + rationale
-├── outline.md          # reverse-outline + keep/defer notes
-├── inputs/             # intro/methods/results excerpts, cited papers, notes
-├── paragraphs/         # one file per paragraph
-└── log/
-    ├── decisions.md    # APPEND-ONLY history — the durable ground log
-    └── handshake/      # per paragraph, per round: issue → solution → response
+<working_dir>/
+├── Manuscript/         # YOU provide: the paper's own sections + any discussion draft
+├── Literature/         # YOU provide: the cited papers (pdf/txt/md)
+└── Thinking-space/     # CLAUDE owns: every artifact, the reasoning, and the log
+    ├── STATE.md        # current snapshot — read FIRST to resume
+    ├── claim.md        # central claim + alternatives + rationale
+    ├── outline.md      # reverse-outline + keep/defer notes
+    ├── paragraphs/     # one file per paragraph
+    ├── scratch/        # option exploration & stress-tests (inspectable reasoning)
+    └── log/
+        ├── decisions.md  # APPEND-ONLY history — the durable ground log
+        └── handshake/    # per paragraph, per round: issue → solution → response
 ```
 
-- **STATE.md** answers "where are we now?" (overwritten each step).
-- **log/decisions.md** answers "how did we get here, and who decided?" (append-only).
-- **log/handshake/** holds the per-round reviewer detail.
+- **Manuscript/** and **Literature/** are your inputs — the system reads them, never rewrites them.
+- **Thinking-space/STATE.md** answers "where are we now?" (overwritten each step).
+- **Thinking-space/log/decisions.md** answers "how did we get here, and who decided?" (append-only).
+- **Thinking-space/log/handshake/** holds the per-round reviewer detail; **scratch/** holds the system's exploration.
 
 To resume — in a new session, a new tool, or after a context limit — read `STATE.md`, then
 the tail of `log/decisions.md`, then the current stage's artifact, and continue from
@@ -83,16 +87,17 @@ manuscript folder, then invoke:
 /discursus "<path-to-manuscript-folder>" co-thinker
 ```
 
-The system creates `<folder>/discursus/` and works there, writing handshake and log files
-beside your draft.
+The folder should contain `Manuscript/` and `Literature/`; the system reads those and writes
+all artifacts and logs to `Thinking-space/`.
 
-**In a cloud session** (no access to your local files): put inputs in a repo-local
-`workspace/<slug>/inputs/` (or paste them), and the system writes the workspace there.
+**In a cloud session** (no access to your local files): create a repo-local
+`workspace/<slug>/` with `Manuscript/` + `Literature/` (or paste the inputs), and the system
+writes to `workspace/<slug>/Thinking-space/`.
 
 ## Requirements & limits
 
 - **claim-evidence** uses a PubMed MCP and/or web access. Paywalled, arXiv, or conference
-  papers it cannot fetch become `NEED:` requests — supply the text/PDF in `inputs/`.
+  papers it cannot fetch become `NEED:` requests — supply the text/PDF in `Literature/`.
 - The system **discusses** results; it never introduces new data (rubric B10).
 - It calibrates claims to evidence and flags overclaim — it will push back on bold wording.
 - It is a co-author and reviewer, not an oracle: the human owns the final decisions, and the

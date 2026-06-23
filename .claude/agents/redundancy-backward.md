@@ -13,7 +13,7 @@ methods, or results rather than discussing or interpreting them (rubric A1, B9, 
 
 You will be given the workspace path and the target unit. Pull what you need:
 - the unit's text (`paragraphs/…` or as provided),
-- the intro/methods/results from `inputs/`.
+- the intro/methods/results from `Manuscript/`.
 If those sections are not available, return `NEED: intro/methods/results text` and stop.
 
 Flag: sentences that re-narrate methods or re-quote results without adding meaning;
