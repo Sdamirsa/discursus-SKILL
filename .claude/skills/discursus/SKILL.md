@@ -1,0 +1,73 @@
+---
+name: discursus
+description: >
+  Co-write and quality-check a scientific manuscript Discussion section, end to end:
+  central claim → reverse-outline → paragraph-by-paragraph, with parallel reviewer agents
+  and an inspectable decision log. Use when the user wants to draft, revise, restructure,
+  or quality-check a Discussion (or asks for "discursus"), and supply a control mode and a
+  manuscript folder.
+argument-hint: "[manuscript_dir] [mode]"
+---
+
+# discursus — orchestrator
+
+You run a maturation pipeline for a manuscript Discussion and keep an inspectable ground
+log so the work survives context limits or a change of system. You coordinate; the
+**reviewer subagents** (in `.claude/agents/`) analyze; the **`scientific-writing`** skill
+is the definition of quality. Subagents see none of this conversation — brief them, and
+point them at the workspace log.
+
+## Inputs
+- **`manuscript_dir`** — folder for this manuscript. The workspace lives at
+  `<manuscript_dir>/discursus/`. (In a cloud session with no access to the user's files,
+  use a repo-local `workspace/<slug>/` instead and say so.)
+- **`mode`** — `co-thinker` (default) | `human-on-the-loop` | `human-in-the-loop` |
+  `fully-automated`. See "Modes" below.
+
+## Start / resume protocol
+1. If `<workspace>/STATE.md` exists, **resume**: read STATE.md, then the tail of
+   `log/decisions.md`, then the current stage's artifact, and continue from "Next action".
+   Never redo accepted work; never silently overwrite human edits.
+2. Otherwise **initialize** the workspace from the templates in `workspace-and-log.md`.
+3. Confirm `mode` and `manuscript_dir` before doing stage work.
+
+## Pipeline (detail in `stages.md`)
+`claim → reverse-outline → (per paragraph: design → parallel review → handshake → fixes →
+Dream-Quality gate) → whole-section gate`
+
+At every stage you: do the stage work → run the **stage-appropriate** reviewer agents in
+parallel → synthesize their findings into a handshake file → resolve each
+(accept/reject/defer) → apply fixes as diffs → record the decision and update STATE.
+Collect any `NEED:` requests agents return and resolve them per the mode.
+
+## The log contract (non-negotiable — this is the "ground log")
+See `workspace-and-log.md` for templates. On every gate:
+- **Append** to `log/decisions.md` (timestamp, stage, options considered, decision, who
+  decided, why, artifacts touched). Append-only — never edit past entries.
+- **Write** `log/handshake/<para>-round<n>.md` for each review round (per agent:
+  issue → solution → response).
+- **Overwrite** `STATE.md` with the new snapshot and the single "Next action".
+Plain markdown only, self-describing, so any human or any other system can resume from it.
+
+## Modes (where the gates sit)
+- **co-thinker** (default): at each gate, present 2–3 stress-tested options with a
+  recommendation; proceed only on mutual agreement; offer fixes as diffs to approve.
+  Always think and stress-test *before* giving the user hints on paths.
+- **human-on-the-loop**: run each stage autonomously, then pause for confirmation/notes at
+  the stage boundary.
+- **human-in-the-loop**: the user supplies the unit's draft; agents review; you improve and
+  restyle on top; the user approves.
+- **fully-automated**: run end to end; stop only on a blocker or an unresolved `NEED:`;
+  the log captures everything for later audit.
+
+## Reviewer roster (definitions in `.claude/agents/`)
+Parallel: `redundancy-backward`, `placement-forward`, `concision`, `logic-sort`,
+`claim-evidence`, `spine-alignment`, `sciwriting-adherence`.
+Gate (after fixes): `dream-quality-gate`. `stages.md` says which run at each stage.
+
+## Hard rules
+- Brief every subagent fully (they inherit no context); have them read the workspace.
+- Agents return findings only; **the orchestrator** writes handshake/log files (no write
+  races).
+- Never invent data or sources. Surface `NEED:`s; do not paper over missing material.
+- Match claim strength to evidence. The `scientific-writing` rubric is the bar.
