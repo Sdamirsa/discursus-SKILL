@@ -8,11 +8,11 @@ context limits and even a change of tool or model.
 
 | Piece | Path | Role |
 |---|---|---|
-| **Orchestrator** | `.claude/skills/discursus/` | Drives the pipeline, enforces the log, coordinates agents. Entry: `/discursus` |
-| **Quality rubric** | `.claude/skills/scientific-writing/` | The single source of truth for "good" (`final-qualities.md`) |
-| **Reviewer agents** | `.claude/agents/*.md` | Seven parallel reviewers + one final quality gate |
-| **System self-audit** | `.claude/skills/system-design-review/` | Audits this system's *design* (dogfood it after changes) |
-| **Worked example** | `.claude/skills/discursus/example-run.md` | A filled claim → outline → paragraph → handshake, as a calibration anchor |
+| **Orchestrator** | `skills/discursus/` | Drives the pipeline, enforces the log, coordinates agents. Entry: `/discursus` |
+| **Quality rubric** | `skills/scientific-writing/` | The single source of truth for "good" (`final-qualities.md`) |
+| **Reviewer agents** | `agents/*.md` | Seven parallel reviewers + one final quality gate |
+| **System self-audit** | `skills/system-design-review/` | Audits this system's *design* (dogfood it after changes) |
+| **Worked example** | `skills/discursus/example-run.md` | A filled claim → outline → paragraph → handshake, as a calibration anchor |
 
 ## The pipeline
 
@@ -108,6 +108,6 @@ writes to `workspace/<slug>/Thinking-space/`.
 
 ## After changing the system
 
-Run the self-audit: invoke `system-design-review` on `.claude/` to check the design against
+Run the self-audit: invoke `system-design-review` on `skills/` + `agents/` to check the design against
 the 13-dimension rubric (single-responsibility, tool scoping, orchestration soundness,
 human-control-mode fit, inspectability, …).

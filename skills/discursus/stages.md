@@ -23,6 +23,9 @@ must be self-contained. Fill this block and pass it verbatim to the agent:
 - Read as needed (absolute paths): <working_dir>/Manuscript/, <working_dir>/Literature/,
   and the Thinking-space artifacts the agent's definition names
   (<working_dir>/Thinking-space/claim.md, /outline.md, /paragraphs/)
+- Quality rubric (absolute): <resolve `${CLAUDE_PLUGIN_ROOT}/skills/scientific-writing/final-qualities.md`
+  to an absolute path and paste it — the `sciwriting-adherence` and `dream-quality-gate` reviewers
+  read the bar from here; if not running as a plugin, give the rubric's path on disk>
 - Your focus: <the one check this agent owns>
 ```
 

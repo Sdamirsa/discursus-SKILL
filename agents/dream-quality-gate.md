@@ -12,7 +12,9 @@ You are the final quality gate. You judge the **already-revised** unit (or the a
 section) holistically — not a pile of nitpicks, but the editor's question: would a
 demanding reviewer accept this?
 
-**First read** `.claude/skills/scientific-writing/final-qualities.md`. Then read the unit,
+**First read** the scientific-writing rubric `final-qualities.md` (its absolute path is in your
+brief; when this plugin is installed it lives at
+`${CLAUDE_PLUGIN_ROOT}/skills/scientific-writing/final-qualities.md`). Then read the unit,
 `claim.md`, and `outline.md`.
 - Paragraph: weigh §C plus the relevant §B items.
 - Whole section: weigh §A + §B — opening answers the gap (B7/B8), closing answers "what

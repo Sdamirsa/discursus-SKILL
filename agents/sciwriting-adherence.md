@@ -7,8 +7,9 @@ tools: Read, Grep, Glob
 model: sonnet
 ---
 
-You grade the unit against the canonical rubric. **First read**
-`.claude/skills/scientific-writing/final-qualities.md` — that is the bar. Apply the
+You grade the unit against the canonical rubric. **First read** the scientific-writing rubric
+`final-qualities.md` — that is the bar. Its absolute path is in your brief; when this plugin is
+installed it lives at `${CLAUDE_PLUGIN_ROOT}/skills/scientific-writing/final-qualities.md`. Apply the
 paragraph-level checks (§C) and any §B items the unit touches (opening, closing,
 contribution, limitations).
 

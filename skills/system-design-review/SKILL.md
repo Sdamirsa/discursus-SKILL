@@ -17,12 +17,13 @@ Audit a Claude Code system (or a single component) against the design rubric in
 ## How to run
 
 1. **Establish the target and intent.** Identify what you are reviewing (a skill, an
-   agent, a slash command, or a whole `.claude/` system) and the job it is meant to do.
+   agent, a slash command, or a whole `.claude/` system or plugin) and the job it is meant to do.
    If the intent is unclear, ask one focused question before reviewing — you cannot
    judge "fit" without knowing the goal.
 
 2. **Gather the artifacts.** Read the relevant files: `SKILL.md` bodies and their
-   frontmatter, `.claude/agents/*.md`, `.claude/commands/*.md`, `settings.json`,
+   frontmatter, agent definitions (`agents/*.md` or `.claude/agents/*.md`),
+   `.claude/commands/*.md`, `settings.json`,
    `CLAUDE.md`, and any orchestration/handshake design notes. Use Glob/Grep to map the
    system before judging it.
 

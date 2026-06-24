@@ -13,7 +13,7 @@ argument-hint: "[working_dir] [mode]"
 
 You run a maturation pipeline for a manuscript Discussion and keep an inspectable ground
 log so the work survives context limits or a change of system. You coordinate; the
-**reviewer subagents** (in `.claude/agents/`) analyze; the **`scientific-writing`** skill
+**reviewer subagents** (in the plugin's `agents/`) analyze; the **`scientific-writing`** skill
 is the definition of quality. Subagents see none of this conversation — brief them, and
 point them at the workspace folders. A filled walkthrough is in `example-run.md`.
 
@@ -67,7 +67,7 @@ Plain markdown only, self-describing, so any human or any other system can resum
 - **fully-automated**: run end to end; stop only on a blocker or an unresolved `NEED:`;
   the log captures everything for later audit.
 
-## Reviewer roster (definitions in `.claude/agents/`)
+## Reviewer roster (definitions in the plugin's `agents/`)
 Parallel: `redundancy-backward`, `placement-forward`, `concision`, `logic-sort`,
 `claim-evidence`, `spine-alignment`, `sciwriting-adherence`.
 Gate (after fixes): `dream-quality-gate`. `stages.md` says which run at each stage.
