@@ -52,3 +52,15 @@
   "comparable"; SHAP given a demoted home).
 - Decided by: claude synthesis; author agreement pending.
 - Artifacts: `outline.md` (revised); `log/handshake/outline-round1.md`.
+
+## [2026-06-23] stage 3 — p01 (opening) drafted, reviewed by all 7, ACCEPTED
+- Decision: p01 drafted, revised after a 7-reviewer round, and PASSED the Dream-Quality gate.
+- Options/why: applied answer-first (B7), cut filler, moved external-validation + sample-size
+  mechanism to p02, clarified the LLM failure mode. Notable adjudication: claim-evidence raised
+  a BLOCKER ("recall near zero" → "precision near zero"); REJECTED the fix as factually wrong
+  (positive class = survival; precision ≈ 1.0) after checking Table 3, but accepted the
+  ambiguity and reworded. Resolved a redundancy-vs-placement conflict in favor of deferring
+  mechanism to p02.
+- Decided by: claude synthesis + Dream-Quality gate PASS (co-think; author may review).
+- Artifacts: `paragraphs/p01-opening.md`; `log/handshake/p01-round1.md`.
+

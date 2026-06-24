@@ -4,21 +4,21 @@
 
 - Working dir: /home/user/discursus-SKILL/workspace/llm-vs-cml-covid
 - Mode: co-thinker
-- Stage: outline (REVISED + reviewed; B6 PASS — awaiting author gate before Stage 3)
+- Stage: paragraph (p01 ACCEPTED; p02–p07 not drafted)
 - Updated: 2026-06-23
 
 ## Central claim — LOCKED = B
 Contingency thesis (low-dim arm → literature; SHAP → supporting; fine-tuning "approach, not
 match"). See `claim.md`.
 
-## Paragraphs (revised reverse-outline order)
+## Paragraphs
 | id  | one-line takeaway | status |
 |-----|-------------------|--------|
-| p01 | confounded prior regimes; high-dim → zero-shot LLMs largely fail, CML reaches ceiling | outlined |
-| p02 | the gap is set by data regime (dimensionality = design condition; data availability swept) | outlined |
+| p01 | high-dim: zero-shot LLMs fail, CML reaches its ceiling (answers gap, launches thesis) | **ACCEPTED** (7 reviewers + Dream-Quality PASS) |
+| p02 | the gap is set by data regime (incl. sample-size sweep + external validation) | outlined |
 | p03 | QLoRA fine-tuning → within striking distance, not matching | outlined |
 | p04 | fine-tuning begins to realign reasoning (qualitative, supporting) | outlined |
-| p05 | prior low-dim/small-sample work: LLMs can match/beat CML (literature; not tested here) | outlined |
+| p05 | prior low-dim/small-sample work: LLMs can match/beat CML (literature; cites live here) | outlined |
 | p06 | limitations — partial, bounded bridge | outlined |
 | p07 | what changes: use CML now; fine-tuned small LLMs are the bridge; choose by regime | outlined |
 
@@ -26,6 +26,6 @@ match"). See `claim.md`.
 - none.
 
 ## Next action
-Author gate on the revised outline. Then either (a) Stage 3: draft p01 live through the full
-7-reviewer paragraph pipeline + Dream-Quality gate (full demo), or (b) declare the spine
-validation complete and wrap up.
+Full pipeline validated end to end (claim → outline → p01 through 7 reviewers + gate). Either
+draft p02 next (carry over external-validation + sample-size mechanism from p01's defers), or
+declare validation complete and wrap up.
