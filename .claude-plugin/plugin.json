@@ -1,0 +1,21 @@
+{
+  "name": "discursus",
+  "version": "1.0.0",
+  "description": "discursus: co-write and quality-check a scientific manuscript Discussion section end to end -- central claim, reverse-outline, then paragraph-by-paragraph, with seven parallel reviewer agents, a holistic quality gate, and an inspectable decision log built to survive context limits or a change of tool. Bundles the scientific-writing quality rubric and a system-design self-audit.",
+  "author": {
+    "name": "Seyed Amir Ahmad Safavi-Naini",
+    "email": "sdamirsa@gmail.com"
+  },
+  "repository": "https://github.com/sdamirsa/discursus-SKILL",
+  "license": "MIT",
+  "keywords": [
+    "scientific-writing",
+    "discussion-section",
+    "manuscript",
+    "academic-writing",
+    "peer-review",
+    "research",
+    "multi-agent",
+    "claude-code"
+  ]
+}
