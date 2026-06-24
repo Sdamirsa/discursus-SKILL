@@ -16,11 +16,39 @@
 - Artifacts: `claim.md`.
 
 ## [2026-06-23] stage 1 — review round 1 (spine-alignment) → revised claim
-- Decision: PENDING author agreement. Revised the proposed claim to **C3** after spine-alignment
-  raised 6 issues (all accepted): calibrated "narrows but does not close"; dropped the scope-
-  creep qualifier "adequate training samples"; named dimensionality as the mechanism to close
-  the B3 gap-loop; DEMOTED the qualitative SHAP realignment from the claim to a body paragraph;
-  kept C over B (recovered the conceptual advance via the dimensionality mechanism); fixed B1
-  (single arc).
-- Decided by: claude proposed; author agreement pending (co-think gate).
-- Artifacts: `claim.md` (Round 1 revision); `log/handshake/claim-round1.md`.
+- Decision: revised the proposed claim to C3 after spine-alignment raised 6 issues (all
+  accepted): calibrated "narrows but does not close"; dropped scope-creep qualifier; named
+  dimensionality as the mechanism; DEMOTED qualitative SHAP from the claim; kept C over B;
+  fixed B1.
+- Decided by: claude proposed; author agreement pending.
+- Artifacts: `claim.md`; `log/handshake/claim-round1.md`.
+
+## [2026-06-23] stage 1 — claim LOCKED = B (author decision)
+- Decision: author locked **Candidate B** (contingency thesis), matching their publication.
+- Conditions carried into the outline: (1) low-dim arm **attributed to prior literature**
+  (B15 mitigation); (2) SHAP realignment stays a **qualitative supporting** paragraph; (3)
+  fine-tuning phrased **"approach, not match."**
+- Decided by: both (co-think).
+- Artifacts: `claim.md` (LOCKED); `outline.md`.
+
+## [2026-06-23] stage 2 — reverse-outline drafted; reviewers dispatched
+- Decision: 7-paragraph reverse-outline on B; promotes the contingency thesis to p01–p03 (the
+  published paper buried it in the conclusion). Dispatched spine-alignment + logic-sort +
+  placement-forward.
+- Decided by: claude (pending review synthesis + author gate).
+- Artifacts: `outline.md`; handshake to follow.
+
+## [2026-06-23] stage 2 — review round 1 synthesis (3 reviewers) → revised outline
+- Decision: REORDERED the outline to keep study-internal results contiguous (p01,p02,
+  fine-tuning,SHAP, then the literature arm), and sharpened every takeaway. PENDING author gate.
+- Options/why: logic-sort found a zig-zag (literature arm splitting the study's own chain) →
+  accepted its reorder; spine-alignment caught a dimensionality-was-swept overclaim and an
+  untested mixed-modality scope creep in the closing → both fixed; placement-forward's
+  sentence-level quarantines (sample-size→p02, low-dim chars→p05, SHAP→p04) folded into
+  keep/defer notes. B6 breadth check PASS.
+- Validation finding: vs the held-aside published Discussion, the reconstructed spine reaches
+  the SAME thesis but is better sequenced (thesis promoted, not buried in the conclusion) and
+  better calibrated (low-dim arm quarantined to literature; "approach, not match" instead of
+  "comparable"; SHAP given a demoted home).
+- Decided by: claude synthesis; author agreement pending.
+- Artifacts: `outline.md` (revised); `log/handshake/outline-round1.md`.

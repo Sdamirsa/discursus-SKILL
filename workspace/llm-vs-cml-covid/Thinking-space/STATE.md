@@ -4,25 +4,28 @@
 
 - Working dir: /home/user/discursus-SKILL/workspace/llm-vs-cml-covid
 - Mode: co-thinker
-- Stage: claim (revised to C3 after spine-alignment round 1 — awaiting author agreement)
+- Stage: outline (REVISED + reviewed; B6 PASS — awaiting author gate before Stage 3)
 - Updated: 2026-06-23
 
-## Central claim
-PROPOSED = **C3**: "On high-dimensional clinical tabular data, classical ML decisively
-outperforms zero-shot LLMs for COVID-19 mortality prediction — because high dimensionality and
-ample training data play to CML's strengths — while parameter-efficient fine-tuning of a small
-LLM narrows, but does not close, that gap." (Alt C2 keeps a softened SHAP mention; B = the
-paper's broader published framing.) See `claim.md`.
+## Central claim — LOCKED = B
+Contingency thesis (low-dim arm → literature; SHAP → supporting; fine-tuning "approach, not
+match"). See `claim.md`.
 
-## Paragraphs
-| id | one-line takeaway | status |
-|----|-------------------|--------|
-| —  | (set during Stage 2 reverse-outline) | not started |
+## Paragraphs (revised reverse-outline order)
+| id  | one-line takeaway | status |
+|-----|-------------------|--------|
+| p01 | confounded prior regimes; high-dim → zero-shot LLMs largely fail, CML reaches ceiling | outlined |
+| p02 | the gap is set by data regime (dimensionality = design condition; data availability swept) | outlined |
+| p03 | QLoRA fine-tuning → within striking distance, not matching | outlined |
+| p04 | fine-tuning begins to realign reasoning (qualitative, supporting) | outlined |
+| p05 | prior low-dim/small-sample work: LLMs can match/beat CML (literature; not tested here) | outlined |
+| p06 | limitations — partial, bounded bridge | outlined |
+| p07 | what changes: use CML now; fine-tuned small LLMs are the bridge; choose by regime | outlined |
 
 ## Open NEEDs
 - none.
 
 ## Next action
-Author picks the claim scope (C3 recommended / C2 / B). Then run Stage 2 (reverse-outline)
-with spine-alignment + logic-sort + placement-forward, and compare the reconstructed outline
-against `Manuscript/published-discussion.md`.
+Author gate on the revised outline. Then either (a) Stage 3: draft p01 live through the full
+7-reviewer paragraph pipeline + Dream-Quality gate (full demo), or (b) declare the spine
+validation complete and wrap up.
