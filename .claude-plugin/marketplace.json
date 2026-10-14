@@ -1,0 +1,26 @@
+{
+  "name": "discursus",
+  "owner": {
+    "name": "Seyed Amir Ahmad Safavi-Naini",
+    "email": "sdamirsa@gmail.com"
+  },
+  "description": "Marketplace for discursus -- co-write and quality-check a scientific manuscript Discussion section in Claude Code.",
+  "plugins": [
+    {
+      "name": "discursus",
+      "source": "./",
+      "description": "Staged Discussion-writing pipeline: central claim -> reverse-outline -> paragraph-by-paragraph, with seven parallel reviewer agents, a holistic quality gate, and an inspectable, resumable decision log. Bundles the scientific-writing rubric and a system-design self-audit.",
+      "homepage": "https://github.com/Sdamirsa/discursus-SKILL",
+      "repository": "https://github.com/Sdamirsa/discursus-SKILL",
+      "license": "MIT",
+      "keywords": [
+        "scientific-writing",
+        "discussion-section",
+        "manuscript",
+        "academic-writing",
+        "peer-review",
+        "multi-agent"
+      ]
+    }
+  ]
+}
