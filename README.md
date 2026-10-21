@@ -1,5 +1,13 @@
 # discursus-SKILL
 
+> **Archived (October 2026). Superseded by [SciFi](https://github.com/Sdamirsa/SciFi).**
+> discursus's central-claim and reverse-outline stages, the paragraph loop with parallel
+> reviewers, the control modes and the inspectable decision log all live on in SciFi, now
+> for the whole manuscript rather than the Discussion alone, with JSON handshakes, a
+> standards skill learned from 14 published papers, and Zotero integration. This repository
+> is kept read-only for reference and is no longer maintained.
+
+
 **A co-writing and quality-checking system for the scientific manuscript *Discussion* section, built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code).**
 
 discursus matures a Discussion through a staged pipeline — central claim → reverse-outline →

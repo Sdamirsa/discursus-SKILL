@@ -1,3 +1,5 @@
+> Archived: superseded by https://github.com/Sdamirsa/SciFi. Do not extend this repo; make changes in SciFi.
+
 # CLAUDE.md -- discursus Plugin
 
 discursus is a Claude Code plugin that co-writes and quality-checks a scientific manuscript
